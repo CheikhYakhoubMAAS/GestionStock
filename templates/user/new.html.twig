@@ -1,0 +1,23 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+  <div class="container">
+      <div class="panel panel-primary">
+        <div class=" panel-heading">
+         <i class="icon_menu"></i>Create new User
+         </div>
+          <div class="panel-body">
+
+           {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+  
+
+    
+
+    <a href="{{ path('user_index') }}"class="btn btn-warning">back to list</a>
+{% endblock %}

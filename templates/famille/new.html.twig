@@ -1,0 +1,18 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}New Famille{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class=" panel-heading">
+         <i class="icon_menu"></i>New Famille
+         </div>
+          <div class="panel-body">
+
+    {{ include('famille/_form.html.twig') }}
+    <a href="{{ path('famille_index') }}" class = "btn btn-warning">back to list</a>
+    </div>
+        </div>
+            </div>
+{% endblock %}

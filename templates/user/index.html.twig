@@ -1,0 +1,50 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+         <i class="icon_menu"></i>Liste User
+         </div>
+          <div class="panel-body">
+  
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Login</th>
+                <th>Pwd</th>
+                <th>Role</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.pwd }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}"class = "btn btn-success">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}"class = "btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}"class = "btn btn-primary">Create new</a>
+    </div>
+    </div>
+    </div>
+{% endblock %}

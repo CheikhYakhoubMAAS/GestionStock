@@ -1,0 +1,22 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Edit Famille{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class=" panel-heading">
+         <i class="icon_menu"></i>Modifier Famille
+         </div>
+          <div class="panel-body">
+
+
+    {{ include('famille/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('famille_index') }}"class="btn btn-warning">back to list</a>
+
+    {{ include('famille/_delete_form.html.twig') }}
+    </div>
+    </div>
+    </div>
+{% endblock %}

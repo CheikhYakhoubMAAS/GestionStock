@@ -1,0 +1,22 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Edit Commande{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class=" panel-heading">
+         <i class="icon_menu"></i>Modifier Commande
+         </div>
+          <div class="panel-body">
+
+    {{ include('commande/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('commande_index') }}"class = "btn btn-warning">back to list</a>
+   
+
+    {{ include('commande/_delete_form.html.twig') }}
+</div>
+</div>
+</div>
+{% endblock %}

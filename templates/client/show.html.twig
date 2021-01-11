@@ -1,0 +1,56 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="panel panel-primary">
+        <div class=" panel-heading">
+         <i class="icon_menu"></i>Show Client
+         </div>
+          <div class="panel-body">
+  
+
+    <table class="table table-condensed">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ client.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ client.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ client.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ client.ville }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ client.tel }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ client.email }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_index') }}"class="btn btn-warning">back to list</a>
+
+    <a href="{{ path('client_edit', {'id': client.id}) }}"class="btn btn-success">edit</a>
+
+    {{ include('client/_delete_form.html.twig') }}
+</div>
+</div>
+</div>
+{% endblock %}
