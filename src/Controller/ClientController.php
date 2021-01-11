@@ -75,7 +75,7 @@ class ClientController extends AbstractController
     /**
      * @Route("/{id}", name="client_show", methods={"GET"})
      */
-    public function show(Client $client): Response
+    public function show(Client $client,Request $request): Response
     {
         $session = $request->getSession();
         if (!$session->has('name'))
