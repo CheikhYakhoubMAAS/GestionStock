@@ -119,14 +119,14 @@ class FamilleController extends AbstractController
     /**
      * @Route("/{id}", name="famille_delete", methods={"DELETE"})
      */
-    public function delete($id=null): Response
-
+    public function delete(Request $request, Famille $famille): Response
     {
-        $repository=$this->getDoctrine()->getRepository(Famille::class);
-        $fams = $repository->find($id);
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($fams);
-        $em->flush();
+        if ($this->isCsrfTokenValid('delete'.$famille->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($famille);
+            $entityManager->flush();
+        }
+
         return $this->redirectToRoute('famille_index');
     }
       
